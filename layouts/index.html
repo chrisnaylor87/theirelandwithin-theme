@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="post-list">
+  {{ range .Paginator.Pages }}
+    {{ if not .Params.microblog }}
+    <article class="post-summary">
+      <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+      <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ with .Summary }}
+        <p class="post-excerpt">{{ . | plainify | truncate 200 }}</p>
+      {{ end }}
+      <a href="{{ .Permalink }}" class="read-more">Read &rarr;</a>
+    </article>
+    {{ end }}
+  {{ end }}
+</div>
+
+{{ if or .Paginator.HasPrev .Paginator.HasNext }}
+<nav class="pagination">
+  {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}">&larr; Older</a>
+  {{ end }}
+  {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}">Newer &rarr;</a>
+  {{ end }}
+</nav>
+{{ end }}
+{{ end }}

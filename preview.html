@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Ireland Within</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    /* =============================================
+       The Ireland Within — Theme
+       Minimal, typography-first
+       ============================================= */
+
+    :root {
+      --bg:           #F8F7F4;
+      --surface:      #FFFFFF;
+      --text:         #1C1C1C;
+      --text-muted:   #6B6560;
+      --accent:       #3D6B4F;
+      --accent-light: #EBF2EE;
+      --border:       #E5E2DA;
+      --max-width:    680px;
+      --font-serif:   'Lora', Georgia, serif;
+      --font-ui:      system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { font-size: 18px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-serif);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.2s;
+    }
+    a:hover { text-decoration-color: var(--accent); }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .site-main { flex: 1; padding: 3rem 0 5rem; }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      background: var(--bg);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .site-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .site-title:hover { color: var(--accent); }
+    .site-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .site-nav a {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .site-nav a:hover { color: var(--accent); }
+
+    /* Post List */
+    .post-list { display: flex; flex-direction: column; gap: 3rem; }
+    .post-summary {
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .post-summary:last-child { border-bottom: none; }
+    .post-date {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .post-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .post-title a { color: var(--text); text-decoration: none; }
+    .post-title a:hover { color: var(--accent); }
+    .post-excerpt {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .read-more {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .read-more:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+    }
+    .pagination a { color: var(--text-muted); text-decoration: none; }
+    .pagination a:hover { color: var(--accent); }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      margin-top: auto;
+    }
+    .site-footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .site-footer p {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-links { display: flex; gap: 1rem; }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-family: var(--font-ui);
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      html { font-size: 17px; }
+      .site-header .container { flex-direction: column; gap: 0.75rem; }
+      .site-footer .container { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="site-title">The Ireland Within</a>
+      <nav class="site-nav">
+        <a href="#">Archive</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      <div class="post-list">
+
+        <article class="post-summary">
+          <time class="post-date">14 June 2025</time>
+          <h2 class="post-title"><a href="#">The Slow Road to Dingle: Notes from the Edge of the World</a></h2>
+          <p class="post-excerpt">There is a particular quality to light on the Dingle Peninsula in the hour before dusk — something between gold and grief — that makes it impossible to keep driving. I had been told this, and still I was unprepared for the moment my hands simply stopped steering and I pulled over at the side of the road.</p>
+          <a href="#" class="read-more">Read &rarr;</a>
+        </article>
+
+        <article class="post-summary">
+          <time class="post-date">2 May 2025</time>
+          <h2 class="post-title"><a href="#">On the Burren: A Landscape That Refuses to Be Gentle</a></h2>
+          <p class="post-excerpt">The Burren does not welcome you so much as it tolerates your presence. Limestone karst stretching in every direction, cracked and grey and ancient — it looks, at first glance, like the aftermath of something. But look longer and the small things reveal themselves: the rare orchids pushing up through fissures, the ring forts that have outlasted empires.</p>
+          <a href="#" class="read-more">Read &rarr;</a>
+        </article>
+
+        <article class="post-summary">
+          <time class="post-date">18 March 2025</time>
+          <h2 class="post-title"><a href="#">Achill Island in Winter: Why I Keep Going Back</a></h2>
+          <p class="post-excerpt">Most people visit Achill in summer, when the beaches are as blue as anywhere in the Mediterranean and the heather is in full bloom. I understand this. But I have been going in February for three years now, and I think the island has a different, truer face when the tourists are gone and the Atlantic swells against an empty shore.</p>
+          <a href="#" class="read-more">Read &rarr;</a>
+        </article>
+
+        <article class="post-summary">
+          <time class="post-date">5 February 2025</time>
+          <h2 class="post-title"><a href="#">Glendalough After the Rain</a></h2>
+          <p class="post-excerpt">Everyone photographs the round tower at Glendalough. It is difficult not to — it rises from the valley floor with an authority that seems to belong to a different scale of time. But the morning I arrived, a low mist was sitting on the upper lake and the whole valley smelled of wet earth and woodsmoke, and I forgot about the tower entirely.</p>
+          <a href="#" class="read-more">Read &rarr;</a>
+        </article>
+
+      </div>
+
+      <nav class="pagination">
+        <span></span>
+        <a href="#">Older &rarr;</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 The Ireland Within</p>
+      <p class="footer-links">
+        <a href="#">RSS</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
