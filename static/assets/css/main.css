@@ -125,7 +125,6 @@ a:hover {
 .post-list {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
 }
 
 .post-summary,
