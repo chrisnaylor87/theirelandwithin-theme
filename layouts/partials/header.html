@@ -1,6 +1,10 @@
 <header class="site-header">
   <div class="container">
-    <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
+    {{ $mb := getJSON "https://micro.blog/feeds/chrisnaylor.json" }}
+    <a href="{{ "/" | relURL }}" class="site-title">
+      {{ with $mb.author.avatar }}<img src="{{ . }}" alt="" class="site-avatar">{{ end }}
+      {{ .Site.Title }}
+    </a>
     <nav class="site-nav">
       {{ range .Site.Menus.main }}
         <a href="{{ .URL }}">{{ .Name }}</a>

@@ -87,6 +87,9 @@ a:hover {
 }
 
 .site-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--font-serif);
   font-size: 1.15rem;
   font-weight: 500;
@@ -94,6 +97,14 @@ a:hover {
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.01em;
+}
+
+.site-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .site-title:hover {
