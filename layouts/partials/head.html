@@ -17,6 +17,8 @@
   {{ $img = .Params.image | absURL }}
 {{ else if .Site.Params.ogImage }}
   {{ $img = .Site.Params.ogImage | absURL }}
+{{ else }}
+  {{ $img = "https://theirelandwithin.ie/uploads/2026/the-ireland-within.jpg" }}
 {{ end }}
 
 <!-- Open Graph -->
