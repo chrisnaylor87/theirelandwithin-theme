@@ -2,7 +2,7 @@
 <article class="post">
   <header class="post-header">
     {{ if .Title }}<h1 class="post-title">{{ .Title }}</h1>{{ end }}
-    <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+    {{ if .Section }}<time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}
   </header>
 
   <div class="post-content">

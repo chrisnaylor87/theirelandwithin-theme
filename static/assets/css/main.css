@@ -442,6 +442,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.5rem;
   max-width: 400px;
+  margin: 2rem 0;
 }
 
 .embeddable-buttondown-form label {
