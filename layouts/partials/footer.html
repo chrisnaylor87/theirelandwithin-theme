@@ -1,9 +1,26 @@
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
-    <p class="footer-links">
-      {{ with .Site.Params.mastodon }}<a href="{{ . }}" rel="me">Mastodon</a>{{ end }}
-      <a href="/feed.xml">RSS</a>
-    </p>
+    <div class="footer-newsletter">
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/theirelandwithin"
+        method="post"
+        class="embeddable-buttondown-form"
+      >
+        <label for="bd-email">New essays, by email</label>
+        <div class="footer-newsletter-row">
+          <input type="email" name="email" id="bd-email" placeholder="your@email.com" />
+          <input type="submit" value="Subscribe" />
+        </div>
+        <p class="footer-newsletter-credit"><a href="https://buttondown.com/refer/theirelandwithin" target="_blank">Powered by Buttondown</a></p>
+      </form>
+    </div>
+    <div class="footer-meta">
+      <p>&copy; {{ now.Year }} {{ .Site.Title }}</p>
+      <p class="footer-links">
+        {{ with .Site.Params.mastodon }}<a href="{{ . }}" rel="me">Mastodon</a>{{ end }}
+        {{ with .Site.Params.instagram }}<a href="https://instagram.com/{{ . }}" target="_blank" rel="noopener">Instagram</a>{{ end }}
+        <a href="/feed.xml">RSS</a>
+      </p>
+    </div>
   </div>
 </footer>
