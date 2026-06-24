@@ -435,39 +435,28 @@ a:hover {
   letter-spacing: -0.025em;
 }
 
-/* --- Footer ---------------------------------------- */
+/* --- Newsletter Form (footer + standalone page) ---- */
 
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 2.5rem 0 2rem;
-  margin-top: auto;
-}
-
-.site-footer .container {
+.embeddable-buttondown-form {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 400px;
 }
 
-.footer-newsletter-form label {
-  display: block;
+.embeddable-buttondown-form label {
+  flex: 0 0 100%;
   font-family: var(--font-ui);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 0.65rem;
 }
 
-.footer-newsletter-row {
-  display: flex;
-  gap: 0.5rem;
-  max-width: 400px;
-}
-
-.footer-newsletter-row input[type="email"] {
+.embeddable-buttondown-form input[type="email"] {
   flex: 1;
+  min-width: 0;
   font-family: var(--font-ui);
   font-size: 0.875rem;
   padding: 0.55rem 0.85rem;
@@ -479,16 +468,17 @@ a:hover {
   transition: border-color 0.2s;
 }
 
-.footer-newsletter-row input[type="email"]:focus {
+.embeddable-buttondown-form input[type="email"]:focus {
   border-color: var(--accent);
 }
 
-.footer-newsletter-row input[type="email"]::placeholder {
+.embeddable-buttondown-form input[type="email"]::placeholder {
   color: var(--text-muted);
   opacity: 0.7;
 }
 
-.footer-newsletter-row input[type="submit"] {
+.embeddable-buttondown-form input[type="submit"] {
+  flex: 0 0 auto;
   font-family: var(--font-ui);
   font-size: 0.775rem;
   font-weight: 500;
@@ -504,15 +494,16 @@ a:hover {
   transition: opacity 0.2s;
 }
 
-.footer-newsletter-row input[type="submit"]:hover {
+.embeddable-buttondown-form input[type="submit"]:hover {
   opacity: 0.82;
 }
 
-.footer-newsletter-credit {
-  margin-top: 0.5rem;
+.embeddable-buttondown-form p {
+  flex: 0 0 100%;
+  margin: 0;
 }
 
-.footer-newsletter-credit a {
+.embeddable-buttondown-form p a {
   font-family: var(--font-ui);
   font-size: 0.7rem;
   color: var(--text-muted);
@@ -520,9 +511,32 @@ a:hover {
   opacity: 0.65;
 }
 
-.footer-newsletter-credit a:hover {
+.embeddable-buttondown-form p a:hover {
   opacity: 1;
   color: var(--accent);
+}
+
+/* --- Footer ---------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0 2rem;
+  margin-top: auto;
+}
+
+.site-footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-newsletter-row {
+  display: contents;
+}
+
+.footer-newsletter-credit {
+  flex: 0 0 100%;
+  margin: 0;
 }
 
 .footer-meta {
@@ -581,12 +595,12 @@ a:hover {
     justify-content: center;
   }
 
-  .footer-newsletter-row {
+  .embeddable-buttondown-form {
     max-width: 100%;
     flex-direction: column;
   }
 
-  .footer-newsletter-row input[type="submit"] {
+  .embeddable-buttondown-form input[type="submit"] {
     width: 100%;
   }
 
