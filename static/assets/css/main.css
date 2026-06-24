@@ -130,8 +130,12 @@ a:hover {
 
 .post-summary,
 .post-full {
-  padding-bottom: 3rem;
+  padding: 2.5rem 0;
   border-bottom: 1px solid var(--border);
+}
+
+.post-full:first-child {
+  padding-top: 0;
 }
 
 .post-summary:last-child,
@@ -209,13 +213,17 @@ a:hover {
 
 /* --- Single Post ----------------------------------- */
 
-.post-header {
+.post-full .post-header {
+  margin-bottom: 0.75rem;
+}
+
+.post .post-header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border);
 }
 
-.post-header .post-title {
+.post .post-header .post-title {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.25;
@@ -223,7 +231,7 @@ a:hover {
   margin-bottom: 0.75rem;
 }
 
-.post-header .post-date {
+.post .post-header .post-date {
   margin-bottom: 0;
 }
 
