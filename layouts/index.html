@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="post-list">
   {{ range .Paginator.Pages }}
-    {{ if not .Params.microblog }}
+    {{ if and (not .Params.microblog) (ne .Section "") }}
     <article class="post-summary">
       <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
       <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>

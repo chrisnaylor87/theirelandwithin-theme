@@ -3,10 +3,8 @@
     <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
     <nav class="site-nav">
       {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" {{ if $.IsHome }}{{ end }}>{{ .Name }}</a>
+        <a href="{{ .URL }}">{{ .Name }}</a>
       {{ end }}
-      <a href="/archive/">Archive</a>
-      <a href="/about/">About</a>
     </nav>
   </div>
 </header>
